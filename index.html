@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapterize</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Chapterize</h1>
+    <p>Plaintext timeline to podcast <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/chapters/jsonChapters.md">jsonChapters</a> converter.</p>
+    <textarea id="inputText" rows="10" cols="50">00:00 Intro
+
+00:29 Sample topic 1
+
+01:23 Sample topic 2
+
+03:57 Sample topic 3
+
+08:31 Wrapping Up</textarea>
+    <button id="convertBtn">Convert to JSON</button>
+    <textarea id="outputText" rows="10" cols="50" readonly></textarea>
+    <script src="script.js"></script>
+</body>
+</html>
