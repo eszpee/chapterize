@@ -28,6 +28,10 @@ button:hover {
     background-color: #0056b3;
 }
 
-#outputText {
-    display: none;
+#resultContainer {
+    margin-top: 20px;
+}
+
+#copyBtn {
+    margin-top: 10px;
 }
