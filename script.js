@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const outputText = document.getElementById('outputText');
     const resultContainer = document.getElementById('resultContainer');
     const copyBtn = document.getElementById('copyBtn');
+    const downloadBtn = document.getElementById('downloadBtn'); // New Download Button
 
     convertBtn.addEventListener('click', function() {
         const result = convertToJSON(inputText.value);
         outputText.value = result;
-//        outputText.style.display = 'block';
         resultContainer.style.display = 'block';
         outputText.select();
     });
@@ -21,6 +21,18 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Failed to copy text: ', err);
             alert('Failed to copy text. Please try selecting and copying manually.');
         }
+    });
+
+    downloadBtn.addEventListener('click', function() {
+        const blob = new Blob([outputText.value], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'chapters.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
     });
 });
 
